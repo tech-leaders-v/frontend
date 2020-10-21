@@ -41,5 +41,5 @@ const material= [
     imports: [material],
     exports: [material]
   })
-  export class UiModule { }
+  export class UiSharedModule { }
   
