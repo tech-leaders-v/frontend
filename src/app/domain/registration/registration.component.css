@@ -1,0 +1,40 @@
+mat-horizontal-stepper {
+    overflow: hidden;
+    padding: 0 24px 24px 24px;
+    text-align: center;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .2);
+  }
+  
+  mat-form-field {
+      min-width: 150px;
+      max-width: 500px;
+      width: 100%;
+  }
+  
+  .avatar-preview {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    border-radius: 100%;
+    overflow: hidden;
+    border: 12px solid #fff;
+    -webkit-box-shadow: 0 0 45px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0 0 45px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 45px rgba(0, 0, 0, .2);
+    background-position: center;
+    display: inline-block;
+  }
+  
+  .avatar-preview>div {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+  }
+  
+  .registration-toolbar {
+    justify-content: center;
+  }
