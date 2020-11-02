@@ -6,8 +6,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { UiSharedModule } from './ui-shared.module';
 
 @NgModule({
-    imports: [UiSharedModule],
-    exports: [UiSharedModule]
-  })
-  export class SharedModule { }
-  
+  imports: [UiSharedModule],
+  exports: [UiSharedModule],
+})
+export class SharedModule {}

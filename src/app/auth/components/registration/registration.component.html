@@ -1,19 +1,14 @@
-<mat-toolbar class="registration-toolbar" color="primary">Registration form</mat-toolbar>
+<mat-toolbar class="registration-toolbar" color="primary">Your Welcome</mat-toolbar>
 <mat-horizontal-stepper [linear]="isLinear" #stepper>
     <mat-step [stepControl]="firstFormGroup">
       <form [formGroup]="firstFormGroup">
-        <ng-template matStepLabel>Fill out fields</ng-template>
+        <ng-template matStepLabel>General information</ng-template>
         
-        <mat-form-field>
-          <mat-label>Are you mentor or mentee? </mat-label>
-          <mat-select [formControl]="userControl" required>
-            <mat-option value="mentor">Mentor</mat-option>
-            <mat-option value="mentee">Mentee</mat-option>
-          </mat-select>
-          <mat-error *ngIf="userControl.hasError('required')">
-            Please choose a role
-          </mat-error>
-        </mat-form-field>
+        <mat-label>Are you mentor or mentee? </mat-label> &nbsp;
+          <mat-button-toggle-group #userControl="matButtonToggleGroup" required>
+            <mat-button-toggle value="mentor">Mentor</mat-button-toggle>
+            <mat-button-toggle value="mentee">Mentee</mat-button-toggle>
+          </mat-button-toggle-group>
         <br/>
 
         <mat-form-field>
@@ -40,10 +35,10 @@
         <mat-form-field>
             <mat-label>Password</mat-label>
             <input matInput id="password" placeholder="Password" 
-                [type]="hide ? 'password' : 'text'" type="password" 
+                [type]="hidePassword ? 'password' : 'text'" type="password" 
                 formControlName="password" required>
-            <mat-icon matSuffix (click)="hide = !hide">
-              {{hide ? 'visibility_off' : 'visibility'}}
+            <mat-icon matSuffix (click)="hidePassword = !hidePassword">
+              {{hidePassword ? 'visibility_off' : 'visibility'}}
             </mat-icon>
         </mat-form-field>
         <br/>
@@ -51,10 +46,10 @@
         <mat-form-field>
             <mat-label>Confirm password</mat-label>
             <input matInput id="confirmPassword" placeholder="Confirm password" 
-                [type]="hide2 ? 'password' : 'text'" type="password" 
+                [type]="hideConfirmPassword ? 'password' : 'text'" type="password" 
                 formControlName="confirmPassword" required>
-            <mat-icon matSuffix (click)="hide2 = !hide2">
-              {{hide2 ? 'visibility_off' : 'visibility'}}
+            <mat-icon matSuffix (click)="hideConfirmPassword = !hideConfirmPassword">
+              {{hideConfirmPassword ? 'visibility_off' : 'visibility'}}
             </mat-icon>
         </mat-form-field>
         <br/>
@@ -69,23 +64,20 @@
 
     <mat-step [stepControl]="secondFormGroup">
       <form [formGroup]="secondFormGroup">
-        <ng-template matStepLabel>Fill out information</ng-template>
+        <ng-template matStepLabel>Project information</ng-template>
 
         <mat-form-field>
           <mat-label>Which class format do you prefer?</mat-label>
-          <mat-select [formControl]="classFormatControl" multiple required>
+          <mat-select formControlName="classFormatControl" multiple required>
             <mat-option value="ofline">Online</mat-option>
             <mat-option value="offline">Offline</mat-option>
           </mat-select>
-          <mat-error *ngIf="classFormatControl.hasError('required')">
-            Please choose a format
-          </mat-error>
         </mat-form-field>
         <br/>
        
         <mat-form-field >
           <mat-label>Choose your skills</mat-label>
-          <mat-select [formControl]="skillsControl" multiple required>
+          <mat-select formControlName="skillsControl" multiple required>
             <mat-option *ngFor="let skill of skillsList" [value]="skill">
               {{skill}}
             </mat-option>
@@ -95,20 +87,17 @@
 
         <mat-form-field>
           <mat-label>Choose your work experience</mat-label>
-          <mat-select [formControl]="workControl" required>
+          <mat-select formControlName="workControl" required>
             <mat-option *ngFor="let level of levelList" [value]="level">
               {{level}}
             </mat-option>
           </mat-select>
-          <mat-error *ngIf="workControl.hasError('required')">
-            Please choose a work experience
-          </mat-error>
         </mat-form-field>
         <br/>
       
         <mat-form-field *ngIf="userControl.value == 'mentor'">
           <mat-label>Choose your future mentee level</mat-label>
-          <mat-select [formControl]="levelControl" multiple>
+          <mat-select formControlName="levelControl" multiple>
             <mat-option *ngFor="let level of levelList" [value]="level">
               {{level}}
             </mat-option>
@@ -128,7 +117,7 @@
     </mat-step>
     <mat-step>
       <form [formGroup]="thirdformGroup">
-        <ng-template matStepLabel>Finish</ng-template>
+        <ng-template matStepLabel>Personal information</ng-template>
 
         <mat-form-field>
           <mat-label>Date of Birth</mat-label>
