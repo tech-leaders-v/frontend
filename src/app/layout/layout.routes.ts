@@ -11,16 +11,20 @@ export const routes: Routes = [
         component: LayoutComponent,
         children: [
             {
+                path: '',
+                redirectTo: 'dashboard',
+            },
+            {
                 path: 'dashboard',
-                component: DashboardComponent,
+                loadChildren: () => import('../dashboard/dashboard.module').then(m => m.DashboardModule),
             },
             {
                 path: 'mentors',
-                component: MentorsComponent,
+                loadChildren: () => import('../mentors/mentors.module').then(m => m.MentorsModule),
             },
             {
                 path: 'mentee',
-                component: MenteeComponent,
+                loadChildren: () => import('../mentee/mentee.module').then(m => m.MenteeModule),
             },
         ]
     },
