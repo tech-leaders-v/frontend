@@ -1,0 +1,18 @@
+.myInfoBlock,
+.myProjectInfoBlock {
+  margin-left: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.myProjectInfoBlock > mat-toolbar {
+  padding: 0 0px;
+  margin-left: 5px;
+}
+
+.myProjectInfoBlock {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+}

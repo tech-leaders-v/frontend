@@ -1,0 +1,27 @@
+<div class="left">
+  <button mat-raised-button (click)="btnClick();">Go to Dashboard</button>
+    <div class="avatar">
+      <div id="imagePreview" [style.backgroundImage]="'url('+ avatarUrl +')'">
+      </div>
+    </div> 
+    <br/><br/>
+    <div class="changeAvatar">
+      <span class="material-icons">
+        photo_camera </span>
+      <span class="material-icons">
+        delete</span>
+    </div>
+</div>
+<div class="right">
+  <mat-tab-group>
+    <mat-tab label="My Info"> 
+      <app-my-info></app-my-info>
+    </mat-tab>
+    <mat-tab label="My Mentors">  
+      <app-my-mentor></app-my-mentor>
+    </mat-tab>
+    <mat-tab label="Team Mentees">  
+      <app-team-mentee></app-team-mentee>
+    </mat-tab>
+  </mat-tab-group>
+</div>

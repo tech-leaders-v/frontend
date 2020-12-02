@@ -7,6 +7,7 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+  public avatarUrl = '../../../assets/iron-man.jpg';
   public loginForm = this.fb.group({
     username: [''],
     password: [''],

@@ -4,7 +4,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 
 const routes: Routes = [
   {
-    path: '', component: HomePageComponent,
+    path: '',
+    component: HomePageComponent,
   },
   {
     path: 'auth',
@@ -12,9 +13,18 @@ const routes: Routes = [
   },
   {
     path: 'overview',
-    loadChildren: () => import('./layout/layout.module').then((m) => m.LayoutModule),
+    loadChildren: () =>
+      import('./layout/layout.module').then((m) => m.LayoutModule),
   },
-
+  {
+    path: 'profile',
+    loadChildren: () =>
+      import('./profile/profile.module').then((m) => m.ProfileModule),
+  },
+  {
+    path: '**',
+    redirectTo: '',
+  },
 ];
 
 @NgModule({

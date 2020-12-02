@@ -5,6 +5,8 @@ import {
   Validators,
   FormControl,
 } from '@angular/forms';
+import { levelList } from '../../../shared/constants/level-list';
+import { skillsList } from '../../../shared/constants/skills-list';
 
 @Component({
   selector: 'app-registration',
@@ -21,25 +23,11 @@ export class RegistrationComponent implements OnInit {
   public hideConfirmPassword = true;
   public user: any;
   public filename: string = null;
+  public avatarUrl = '../../../assets/iron-man.jpg';
   public base64File = '../../../assets/iron-man.jpg';
 
-  public skillsList: string[] = [
-    'JavaScript',
-    'HTML',
-    'CSS',
-    'Angular',
-    'React',
-    'Vue',
-    'Node.js',
-    'C#',
-    'Java',
-    'Kotlin',
-    'Swift',
-    'C',
-    'PHP',
-    'Python',
-  ];
-  public levelList: string[] = ['Beginner', 'Junior', 'Middle', 'Senior'];
+  public levelList = levelList;
+  public skillsList = skillsList;
 
   constructor(private formBuilder: FormBuilder) {}
 
@@ -54,11 +42,12 @@ export class RegistrationComponent implements OnInit {
     this.secondFormGroup = this.formBuilder.group({
       classFormatControl: ['', Validators.required],
       skillsControl: ['', Validators.required],
-      workControl: ['', Validators.required],
-      levelControl: ['', Validators.required],
+      qualificationLevelControl: ['', Validators.required],
+      menteeQualificationLevelControl: ['', Validators.required],
     });
     this.thirdformGroup = this.formBuilder.group({
       dateOfBirth: ['', Validators.required],
+      telegramLink: ['', Validators.required],
       aboutYou: ['', Validators.required],
       filename: ['', Validators.required],
     });
