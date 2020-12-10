@@ -1,20 +1,20 @@
 import { Routes } from '@angular/router';
-import { LayoutComponent } from './layout.component';
+import { DashboardComponent } from './dashboard.component';
 
 export const routes: Routes = [
     {
         path: '',
-        component: LayoutComponent,
+        component: DashboardComponent,
         children: [
             {
                 path: '',
-                redirectTo: 'dashboard',
+                redirectTo: 'summary',
             },
             {
-                path: 'dashboard',
-                loadChildren: () => import('../dashboard/dashboard.module').then(m => m.DashboardModule),
+                path: 'summary',
+                loadChildren: () => import('../summary/summary.module').then(m => m.SummaryModule),
                 data: {
-                    title: 'Dashboard'
+                    title: 'Summary'
                   }
             },
             {
