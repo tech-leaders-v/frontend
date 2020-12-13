@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { levelList } from '../../shared/constants/level-list';
 import { skillsList } from '../../shared/constants/skills-list';
+import { Input } from '@angular/core';
 
 @Component({
   selector: 'app-my-info',
@@ -14,11 +15,11 @@ import { skillsList } from '../../shared/constants/skills-list';
   styleUrls: ['./my-info.component.css'],
 })
 export class MyInfoComponent implements OnInit {
+  @Input() user: any;
   public firstFormGroup: FormGroup;
   public hidePassword = true;
   public maxToDate = new Date();
   public hideConfirmPassword = true;
-  public user: any;
   public filename: string = null;
   public base64File = '../../../assets/iron-man.jpg';
 
@@ -34,22 +35,6 @@ export class MyInfoComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {}
 
   public ngOnInit(): void {
-    this.user = {
-      userType: 'mentor', // | 'mentee';
-      fullName: 'Will Smith',
-      login: 'hencock',
-      email: 'hencock@gmail.com',
-      password: 'star11',
-      classFormat: ['online'],
-      skills: ['java', 'c#'],
-      qualificationLevel: 'senior',
-      menteeQualificationLevel: ['senior', 'middle'],
-      dateOfBirth: new FormControl(new Date()),
-      telegramLink: 'http://',
-      aboutYou: 'Superhero',
-      base64File: '../../../assets/iron-man.jpg',
-    };
-
     this.dateOfBirthSelected = this.user.dateOfBirth;
     this.classFormatSelected = this.user.classFormat;
     this.skillsSelected = this.user.skills;
@@ -89,34 +74,9 @@ export class MyInfoComponent implements OnInit {
     this.firstFormGroup
       .get('menteeQualificationLevelControl')
       .setValue(this.user.menteeQualificationLevel);
-
-    this.firstFormGroup.controls.fullName.disable();
-    this.firstFormGroup.controls.login.disable();
-    this.firstFormGroup.controls.email.disable();
-    this.firstFormGroup.controls.password.disable();
-    this.firstFormGroup.controls.dateOfBirth.disable();
-    this.firstFormGroup.controls.telegramLink.disable();
-    this.firstFormGroup.controls.aboutYou.disable();
-    this.firstFormGroup.controls.classFormatControl.disable();
-    this.firstFormGroup.controls.skillsControl.disable();
-    this.firstFormGroup.controls.qualificationLevelControl.disable();
-    this.firstFormGroup.controls.menteeQualificationLevelControl.disable();
   }
 
-  public editProfile(): void {
-    this.firstFormGroup.controls.fullName.enable();
-    this.firstFormGroup.controls.fullName.enable();
-    this.firstFormGroup.controls.login.enable();
-    this.firstFormGroup.controls.email.enable();
-    this.firstFormGroup.controls.password.enable();
-    this.firstFormGroup.controls.dateOfBirth.enable();
-    this.firstFormGroup.controls.telegramLink.enable();
-    this.firstFormGroup.controls.aboutYou.enable();
-    this.firstFormGroup.controls.classFormatControl.enable();
-    this.firstFormGroup.controls.skillsControl.enable();
-    this.firstFormGroup.controls.qualificationLevelControl.enable();
-    this.firstFormGroup.controls.menteeQualificationLevelControl.enable();
+  public saveProfile(): void {
+    console.log(this.firstFormGroup.value);
   }
-
-  public saveProfile(): void {}
 }

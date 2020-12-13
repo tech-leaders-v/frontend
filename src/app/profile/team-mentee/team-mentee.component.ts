@@ -1,29 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-
-const ELEMENT_DATA = [
-  {
-    id: 1,
-    name: 'Robert Downey Jr.',
-    email: '123',
-    link: 'https://t.me',
-    skills: ['java', 'c#'],
-  },
-  {
-    id: 2,
-    name: 'Mark Ruffalo',
-    email: '123',
-    link: 'https://t.me',
-    skills: ['javaScript', 'c#'],
-  },
-  {
-    id: 3,
-    name: 'Chris Hemsworth',
-    email: '123',
-    link: 'https://t.me',
-    skills: ['vue', 'c#'],
-  },
-];
 
 @Component({
   selector: 'app-team-mentee',
@@ -31,12 +7,15 @@ const ELEMENT_DATA = [
   styleUrls: ['./team-mentee.component.css'],
 })
 export class TeamMenteeComponent implements OnInit {
-  displayedColumns: string[] = ['name', 'email', 'link', 'skills'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  @Input() team_mentee_list: any;
+  displayedColumns: string[] = ['name', 'email', 'skills', 'link'];
+  public dataSource: any;
 
   constructor() {}
 
-  public ngOnInit(): void {}
+  public ngOnInit(): void {
+    this.dataSource = new MatTableDataSource(this.team_mentee_list);
+  }
 
   public applyFilter(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value;

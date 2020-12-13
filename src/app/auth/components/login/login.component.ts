@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,9 +14,16 @@ export class LoginComponent implements OnInit {
     password: [''],
   });
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private route: Router) {}
 
   public ngOnInit(): void {}
 
-  public onSubmit(): void {}
+  public onSubmit(): void {
+    if (
+      this.loginForm.controls.username.value === 'test' &&
+      this.loginForm.controls.password.value === 'test'
+    ) {
+      this.route.navigate(['/overview']);
+    }
+  }
 }

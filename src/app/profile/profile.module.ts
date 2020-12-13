@@ -7,6 +7,7 @@ import { MyInfoComponent } from './my-info/my-info.component';
 import { MyMentorComponent } from './my-mentor/my-mentor.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfileRoutingModule } from './profile-routing.module';
+import { MyRequestsComponent } from './my-requests/my-requests.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ProfileRoutingModule } from './profile-routing.module';
     TeamMenteeComponent,
     MyInfoComponent,
     MyMentorComponent,
+    MyRequestsComponent,
   ],
   imports: [
     CommonModule,
@@ -27,6 +29,7 @@ import { ProfileRoutingModule } from './profile-routing.module';
     TeamMenteeComponent,
     MyInfoComponent,
     MyMentorComponent,
+    MyRequestsComponent,
   ],
 })
 export class ProfileModule {}
