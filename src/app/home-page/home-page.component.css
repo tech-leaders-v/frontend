@@ -17,6 +17,7 @@ header {
   height: 37px;
   width: 221px;
 }
+
 .authorization {
   width: 100%;
   display: flex;
@@ -39,6 +40,25 @@ content {
   background-image: url(https://www.dataart.ru/static/img/general/bg__top--events.png);
   padding-left: 160px;
 }
+.second {
+  background-image: url(https://w-dog.ru/wallpapers/2/3/464386473699035/ssha-nyu-jork-empire-city-manxetten-bruklinskij-most-ist-river-fioletovyj-magiya-noch-fonari-osveshhenie-bereg-voda-porody-ogni-kamni.jpg);
+  max-width: 100%;
+  height: 350px;
+  padding-left: 160px;
+}
+
+.second img {
+  padding-top: 100px;
+  width: 221px;
+  padding: 40px;
+}
+
+.second p {
+  color: white;
+  font-size: 30px;
+  padding-top: 130px;
+}
+
 .first h1 {
   color: white;
   font-size: 72px;
