@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable()
-export class UsersService {
+export class MentorsService {
 
     private url = "https://my-json-server.typicode.com/Erson3536/tech-leaders-network-fake-server/mentors";
 

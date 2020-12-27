@@ -3,13 +3,13 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { UserModel } from '../shared/models/UserModel';
-import { UsersService } from '../users.service';
+import { MentorsService } from '../mentors.service';
 
 @Component({
   selector: 'app-mentors',
   templateUrl: './mentors.component.html',
   styleUrls: ['./mentors.component.css'],
-  providers: [UsersService]
+  providers: [MentorsService]
 })
 export class MentorsComponent implements OnInit {
 
@@ -21,10 +21,10 @@ export class MentorsComponent implements OnInit {
   pending: boolean;
 
   constructor(
-    private usersService: UsersService,
+    private mentorsService: MentorsService,
     private router: Router
   ) {
-    this.usersService.getAllMentors()
+    this.mentorsService.getAllMentors()
       .subscribe((data: UserModel[]) => {
         this.dataSource = new MatTableDataSource(data);
       });
