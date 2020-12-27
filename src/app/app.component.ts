@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer, Title } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import {filter, map, mergeMap} from 'rxjs/operators';
 
@@ -14,7 +15,10 @@ export class AppComponent {
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private titleService: Title) {
+    private titleService: Title,
+    iconRegistry: MatIconRegistry,
+    sanitizer: DomSanitizer,
+    ) {
       
     this.router.events.pipe(
       filter((event) => event instanceof NavigationEnd),
@@ -28,5 +32,10 @@ export class AppComponent {
         this.titleService.setTitle(event['title']);
         console.log('Page Title', event['title']);
       });
+
+      iconRegistry.addSvgIcon(
+        'telegram',
+        sanitizer.bypassSecurityTrustResourceUrl('assets/svg-icons/telegram.svg')
+      );
   }
 }

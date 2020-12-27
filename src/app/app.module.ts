@@ -8,6 +8,8 @@ import { AuthModule } from './auth/auth.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfileModule } from './profile/profile.module';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [AppComponent, HomePageComponent],
   imports: [
@@ -19,6 +21,7 @@ import { ProfileModule } from './profile/profile.module';
     SharedModule,
     AuthModule,
     ProfileModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
