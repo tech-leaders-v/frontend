@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
       this.loginForm.controls.username.value === 'test' &&
       this.loginForm.controls.password.value === 'test'
     ) {
-      this.route.navigate(['/overview']);
+      this.route.navigate(['/dashboard']);
     }
   }
 }
