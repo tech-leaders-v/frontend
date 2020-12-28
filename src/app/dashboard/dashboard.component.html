@@ -7,15 +7,23 @@
     <div class="navigation">
         <a routerLink="summary" routerLinkActive="link-active">Summary</a>
         <a>My Team</a>
-        <a routerLink="mentors"
-        routerLinkActive="link-active">Mentors</a>
-        <a routerLink="mentee"
-        routerLinkActive="link-active">Mentee</a>
+        <a routerLink="mentors" routerLinkActive="link-active">Mentors</a>
+        <a routerLink="mentee" routerLinkActive="link-active">Mentee</a>
     </div>
-    <div class="avatar-menu">
-        <a href="profile">
-            <img src="https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg" alt="avatar-menu">
-        </a>
+    <div *ngIf="userName" class="username">{{userName}}</div>
+    <div class="avatar-menu" [matMenuTriggerFor]="menu">
+        <img src="https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg"
+            alt="avatar-menu">
     </div>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/profile">
+            <mat-icon>account_box</mat-icon>
+            <span>My Profile</span>
+        </button>
+        <button mat-menu-item (click)="signOut()">
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Exit</span>
+        </button>
+    </mat-menu>
 </mat-toolbar>
 <router-outlet></router-outlet>
