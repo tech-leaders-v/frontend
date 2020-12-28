@@ -12,6 +12,9 @@ mat-toolbar {
   width: 174px;
   vertical-align: middle;
 }
+.username {
+  padding-right: 15px;
+}
 .navigation {
   width: 83%;
 }
@@ -24,7 +27,9 @@ mat-toolbar {
   color: #333333;
   text-decoration: none;
 }
-
+.avatar-menu:hover {
+  cursor: pointer;
+}
 .avatar-menu img {
   width: 45px;
   height: 45px;

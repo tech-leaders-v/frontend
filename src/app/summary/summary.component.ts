@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LocalStorageService } from '../local-storage.service';
 import { MentorsService } from '../mentors.service';
 import { UserModel } from '../shared/models/UserModel';
 
@@ -6,20 +7,21 @@ import { UserModel } from '../shared/models/UserModel';
   selector: 'app-summary',
   templateUrl: './summary.template.html',
   styleUrls: ['./summary.style.css'],
-  providers: [MentorsService]
+  providers: [MentorsService, LocalStorageService]
 })
 export class SummaryComponent implements OnInit {
 
   users: UserModel[];
   displayedUser: UserModel;
 
-  constructor(private mentorsService: MentorsService,
+  constructor(
+    private mentorsService: MentorsService,
+    private localStorageService: LocalStorageService
   ) {
     this.mentorsService.getAllMentors()
       .subscribe((mentors: UserModel[]) => {
         this.users = mentors;
       })
-      console.log('users: ', this.users);
   }
 
   ngOnInit(): void {
@@ -41,7 +43,6 @@ export class SummaryComponent implements OnInit {
 
   showProfile(user: UserModel): void {
     this.displayedUser = user;
-    console.log('username: ', user.fullName);
   }
 
 }

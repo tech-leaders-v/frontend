@@ -5,6 +5,7 @@ import {
   Validators,
   FormControl,
 } from '@angular/forms';
+import { LocalStorageService } from 'src/app/local-storage.service';
 import { levelList } from '../../../shared/constants/level-list';
 import { skillsList } from '../../../shared/constants/skills-list';
 
@@ -29,7 +30,13 @@ export class RegistrationComponent implements OnInit {
   public levelList = levelList;
   public skillsList = skillsList;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private localStorageService: LocalStorageService,
+  ) {
+    this.localStorageService.remove('login');
+    this.localStorageService.remove('password');
+  }
 
   public ngOnInit(): void {
     this.firstFormGroup = this.formBuilder.group({
@@ -53,7 +60,10 @@ export class RegistrationComponent implements OnInit {
     });
   }
 
-  public confirmYes(): void {}
+  public confirmYes(): void {
+    this.localStorageService.set('login', this.firstFormGroup.controls.login.value);
+    this.localStorageService.set('password', this.firstFormGroup.controls.password.value);
+  }
 
   public onFileSelect(e: any): void {
     try {
