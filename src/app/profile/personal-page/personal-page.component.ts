@@ -76,7 +76,7 @@ export class PersonalPageComponent implements OnInit {
   }
 
   public btnClick = function (): void {
-    this.router.navigate(['/overview']);
+    this.router.navigate(['/dashboard']);
   };
 
   public onFileSelect(e: any): void {
