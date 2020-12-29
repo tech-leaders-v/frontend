@@ -6,70 +6,76 @@
   border-left: 1px solid gray;
   height: 100%;
 }
-
 .left {
   position: absolute;
   left: 0;
   top: 0;
   width: 50%;
+  height: 100%;
+  background-image: url("../../../../assets/login-page-background.jpg");
 }
-
-.login-content {
-  margin: 0 auto;
-  height: 100px;
-  margin-top: 25%;
-}
-
 .mat-card {
   box-shadow: 0 0 black;
 }
-
-.login-toolbar {
-  justify-content: center;
-  background-color: white;
-  font-size: 30px;
-}
-
 .mat-form-field {
   width: 100%;
 }
-
+.header {
+  height: 35%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.title {
+  font-weight: 500;
+  font-size: 64px;
+  color: #333333;
+  margin-bottom: 36px;
+}
+.sub-title {
+  font-weight: 300;
+  font-size: 18px;
+  color: #333333;
+}
+.content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+form {
+  width: 530px;
+}
+.mat-form-field {
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+:host ::ng-deep .mat-form-field-prefix {
+  position: absolute;
+  left: -35px;
+  top: 19px;
+}
+button[type="submit"] {
+  width: 349px;
+  height: 50px;
+  background-color: #04a87d;
+  font-weight: 500;
+  font-size: 24px;
+  color: white;
+  border-radius: 25px;
+  margin-top: 50px;
+}
 .mat-raised-button {
   width: 100%;
   margin-top: 24px;
 }
-
-.avatar-preview {
-  width: 220px;
-  height: 220px;
-  border-radius: 100%;
-  overflow: hidden;
-  border: 12px solid #fff;
-  -webkit-box-shadow: 0 0 45px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 0 45px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 45px rgba(0, 0, 0, 0.2);
-  background-position: center;
-  display: block;
-  margin: 0 auto;
-  margin-top: 30%;
-}
-
-.avatar-preview > div {
-  height: 220px;
-  border-radius: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
 .logo img {
   height: 37px;
   width: 221px;
   display: block;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 35px;
 }
-
 .authorization {
   width: 100%;
   display: flex;
@@ -82,4 +88,13 @@
   text-decoration: none;
   color: #333333;
   margin-right: 35px;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+}
+.footer img {
+  width: 116px;
+  height: 136px;
+  margin-top: 50px;
 }

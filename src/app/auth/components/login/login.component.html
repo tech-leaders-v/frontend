@@ -2,35 +2,32 @@
   <div class="logo">
     <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/DataArt%27s_Logo.png" alt="Data Art logo">
   </div>
-  <div class="avatar-preview">
-    <div id="imagePreview" [style.backgroundImage]="'url('+ avatarUrl +')'">
-    </div>
-  </div> 
 </div>
 <div class="right">
   <div class="authorization">
     <a routerLink="">Back</a>
   </div>
-  <div class="login-container">
-      <div class="login-content">
-        <mat-toolbar class="login-toolbar" >Your Welcome</mat-toolbar>
-        <mat-card>
-          <form [formGroup]="loginForm" novalidate (ngSubmit)="onSubmit()">
-            <mat-form-field>
-              <mat-icon matPrefix>person_outline</mat-icon>
-              <input autofocus type="text" matInput placeholder="Username" 
-                  formControlName="username">
-            </mat-form-field>
+  <div class="header">
+    <div class="title">Welcome</div>
+    <div class="sub-title">Please, login in your account</div>
+  </div>
+  <div class="content">
+      <form [formGroup]="loginForm" id="loginForm" novalidate (ngSubmit)="onSubmit()">
+        <mat-form-field>
+          <mat-icon matPrefix>person_outline</mat-icon>
+          <input autofocus type="text" matInput placeholder="Username" 
+              formControlName="username">
+        </mat-form-field>
 
-            <mat-form-field>
-              <mat-icon matPrefix>lock_outline</mat-icon>
-              <input type="password" autocomplete="false" matInput placeholder="Password" 
-                  formControlName="password">
-            </mat-form-field>
-
-            <button type="submit" mat-raised-button>Let me in</button>
-          </form>
-        </mat-card>
-      </div>
+        <mat-form-field>
+          <mat-icon matPrefix>lock_outline</mat-icon>
+          <input type="password" autocomplete="false" matInput placeholder="Password" 
+              formControlName="password">
+        </mat-form-field>
+      </form>
+      <button type="submit" mat-raised-button form="loginForm">Sign In</button>
+  </div>
+  <div class="footer">
+    <img src="../../../../assets/tech-logo.jpg" alt="Tech Leaders Logo">
   </div>
 </div>
