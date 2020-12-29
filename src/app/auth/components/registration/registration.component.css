@@ -24,6 +24,8 @@ mat-form-field {
   min-width: 150px;
   max-width: 500px;
   width: 100%;
+  font-weight: 300;
+  font-size: 18px;
 }
 
 .avatar-preview {
@@ -50,12 +52,20 @@ mat-form-field {
   display: inline-block;
 }
 
-.registration-toolbar {
+.title {
   justify-content: center;
   background-color: white;
-  font-size: 30px;
+  font-weight: 500;
+  font-size: 64px;
+  color: #333333;
+  margin-top: 50px;
+  margin-bottom: 40px;
 }
-
+.sub-title {
+  font-weight: 300;
+  font-size: 18px;
+  color: #333333;
+}
 .logo img {
   height: 37px;
   width: 221px;
@@ -80,7 +90,10 @@ mat-form-field {
 }
 
 .container {
-  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .avatar > div {
@@ -90,7 +103,9 @@ mat-form-field {
   background-repeat: no-repeat;
   background-position: center;
 }
-
+.avatar > div:hover {
+  cursor: pointer;
+}
 .authorization {
   width: 100%;
   display: flex;
@@ -103,4 +118,62 @@ mat-form-field {
   text-decoration: none;
   color: #333333;
   margin-right: 35px;
+}
+mat-horizontal-stepper {
+  margin-top: 20px;
+  width: 530px;
+}
+:host ::ng-deep mat-step-header {
+  width: 45px;
+  border-radius: 50px;
+}
+:host ::ng-deep .mat-step-icon {
+  background-color: #abb3b9;
+  height: 40px;
+  width: 40px;
+  font-size: 24px;
+}
+:host ::ng-deep mat-step-header[tabindex="0"] .mat-step-icon {
+  background-color: #32afe6;
+}
+mat-button-toggle-group {
+  border-radius: 25px;
+}
+.sign-up-as {
+  font-weight: 300;
+  font-size: 14px;
+  color: #797979;
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
+.button-next1 {
+  width: 349px;
+  height: 50px;
+  background-color: #04a87d;
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 24px;
+  color: white;
+  margin-top: 30px;
+}
+.button-back2 {
+  width: 175px;
+  height: 50px;
+  background-color: #f7f7f7;
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 24px;
+  color: black;
+  margin-top: 30px;
+  margin-right: 10px;
+}
+.button-next2 {
+  width: 175px;
+  height: 50px;
+  background-color: #04a87d;
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 24px;
+  color: white;
+  margin-top: 30px;
 }

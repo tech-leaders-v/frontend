@@ -24,7 +24,7 @@ export class RegistrationComponent implements OnInit {
   public hideConfirmPassword = true;
   public user: any;
   public filename: string = null;
-  public avatarUrl = '../../../assets/iron-man.jpg';
+  public avatarUrl = '../../../assets/avatar-placeholder.jpg';
   public base64File = '../../../assets/iron-man.jpg';
 
   public levelList = levelList;
@@ -75,6 +75,7 @@ export class RegistrationComponent implements OnInit {
         this.base64File = e.target.result;
         this.secondFormGroup.value.filename = this.base64File;
       };
+      this.avatarUrl = '../../../assets/avatar.jpg';
     } catch (error) {
       this.filename = null;
       this.base64File = null;
