@@ -152,7 +152,7 @@
           </mat-form-field>
           <br />
 
-          <mat-form-field>
+          <!-- <mat-form-field>
             <input [hidden]="true" (change)="onFileSelect($event)" type="file" accept="all/*" #fileSelect>
             <input readonly id="filename" matInput formControlName="filename" placeholder="Select your avatar..." />
             <button *ngIf="base64File" (click)="base64File = null; filename = null" matSuffix
@@ -164,19 +164,19 @@
               [matTooltipPosition]="'above'">
               <mat-icon>file_upload</mat-icon>
             </button>
-          </mat-form-field>
+          </mat-form-field> -->
           <br />
-          <div class="avatar-preview">
+          <!-- <div class="avatar-preview">
             <div id="imagePreview" [style.backgroundImage]="'url('+ base64File +')'">
             </div>
-          </div>
+          </div> -->
           <br /><br />
 
           <p>Everything seems correct. Confirm the data? </p>
           <br />
           <div>
             <button class="button-back2" mat-button (click)="stepper.reset()">Reset</button>&nbsp;
-            <button class="button-next2" id="accepted" mat-raised-button (click)="confirmYes()">
+            <button routerLink="/auth/login" class="button-next2" id="accepted" mat-raised-button (click)="confirmYes()">
               Done
             </button>
           </div>

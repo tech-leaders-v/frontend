@@ -6,8 +6,8 @@
         <div *ngIf="displayedUser" class="displayed-user-content">
             <div class="displayed-photo">
                 <div class="displayed-photo-card">
-                    <!-- <img [src]="displayedUser.base64File" alt="User photo"> -->
-                    <img src="../../assets/will_smith.jpg" alt="User photo">
+                    <img [src]="displayedUser.base64File" alt="User photo">
+                    <!-- <img src="../../assets/will_smith.jpg" alt="User photo"> -->
                 </div>
             </div>
             <div class="displayed-info">
@@ -20,6 +20,7 @@
                 <div class="skills">
                     <b>Skills: </b>{{displayedUser.skills}}
                 </div>
+                    <button class="contact-me" mat-button>Contact me</button>
             </div>
             <div class="displayed-additional-info">{{displayedUser.aboutYou}}</div>
         </div>
