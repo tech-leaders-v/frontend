@@ -1,0 +1,20 @@
+<mat-toolbar><span>My sent requests</span></mat-toolbar><br/>
+<ul>
+    <li *ngFor="let mentor of mentors_list">{{mentor.name}}
+        <button color="warn" mat-icon-button>
+            <mat-icon>close</mat-icon>
+        </button><br/>
+    </li>
+    
+</ul>
+<mat-toolbar><span>My incoming requests</span></mat-toolbar><br/>
+<ul>
+    <li *ngFor="let mentor of income_mentor_list">{{mentor.name}}
+        <button class="greenButoon" mat-icon-button>
+            <mat-icon>check</mat-icon>
+        </button>
+        <button color="warn" mat-icon-button>
+            <mat-icon>close</mat-icon>
+        </button><br/>
+    </li>
+</ul>

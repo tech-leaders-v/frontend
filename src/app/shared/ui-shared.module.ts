@@ -25,36 +25,35 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 
-const material= [
-    MatButtonModule,
-    MatButtonToggleModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatMenuModule,
-    MatListModule,
-    MatCardModule,
-    MatTabsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    MatRadioModule,
-    MatChipsModule,
-    MatCheckboxModule, 
-    MatIconModule, 
-    MatExpansionModule,
-    MatStepperModule,
-    MatTooltipModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatAutocompleteModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatTableModule,
-]
+const material = [
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatToolbarModule,
+  MatSidenavModule,
+  MatMenuModule,
+  MatListModule,
+  MatCardModule,
+  MatTabsModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatSelectModule,
+  MatRadioModule,
+  MatChipsModule,
+  MatCheckboxModule,
+  MatIconModule,
+  MatExpansionModule,
+  MatStepperModule,
+  MatTooltipModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatAutocompleteModule,
+  MatPaginatorModule,
+  MatSortModule,
+  MatTableModule,
+];
 
 @NgModule({
-    imports: [material],
-    exports: [material]
-  })
-  export class UiSharedModule { }
-  
+  imports: [material],
+  exports: [material],
+})
+export class UiSharedModule {}

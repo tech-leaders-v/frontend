@@ -1,0 +1,100 @@
+.right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  border-left: 1px solid gray;
+  height: 100%;
+}
+.left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-image: url("../../../../assets/login-page-background.jpg");
+}
+.mat-card {
+  box-shadow: 0 0 black;
+}
+.mat-form-field {
+  width: 100%;
+}
+.header {
+  height: 35%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.title {
+  font-weight: 500;
+  font-size: 64px;
+  color: #333333;
+  margin-bottom: 36px;
+}
+.sub-title {
+  font-weight: 300;
+  font-size: 18px;
+  color: #333333;
+}
+.content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+form {
+  width: 530px;
+}
+.mat-form-field {
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+:host ::ng-deep .mat-form-field-prefix {
+  position: absolute;
+  left: -35px;
+  top: 19px;
+}
+button[type="submit"] {
+  width: 349px;
+  height: 50px;
+  background-color: #04a87d;
+  font-weight: 500;
+  font-size: 24px;
+  color: white;
+  border-radius: 25px;
+  margin-top: 50px;
+}
+.mat-raised-button {
+  width: 100%;
+  margin-top: 24px;
+}
+.logo img {
+  height: 37px;
+  width: 221px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 35px;
+}
+.authorization {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+.authorization a {
+  padding: 0 10px;
+  font-size: 24px;
+  text-decoration: none;
+  color: #333333;
+  margin-right: 35px;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+}
+.footer img {
+  width: 116px;
+  height: 136px;
+  margin-top: 50px;
+}

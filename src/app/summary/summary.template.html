@@ -1,0 +1,28 @@
+<div class="content">
+    <div class="card-list" id="card-list">
+        <user-card [user]="user" *ngFor="let user of users" (click)="showProfile(user)"></user-card>
+    </div>
+    <div class="displayed-user">
+        <div *ngIf="displayedUser" class="displayed-user-content">
+            <div class="displayed-photo">
+                <div class="displayed-photo-card">
+                    <img [src]="displayedUser.base64File" alt="User photo">
+                    <!-- <img src="../../assets/will_smith.jpg" alt="User photo"> -->
+                </div>
+            </div>
+            <div class="displayed-info">
+                <div class="info-fullName">
+                    {{displayedUser.fullName}}
+                </div>
+                <div class="qualificationLevel">
+                    {{displayedUser.qualificationLevel}}
+                </div>
+                <div class="skills">
+                    <b>Skills: </b>{{displayedUser.skills}}
+                </div>
+                    <button class="contact-me" mat-button>Contact me</button>
+            </div>
+            <div class="displayed-additional-info">{{displayedUser.aboutYou}}</div>
+        </div>
+    </div>
+</div>
